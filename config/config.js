@@ -5,6 +5,13 @@ const development = {
 
 };
 
-const production={
-    apiUrl:process.env.React_Native_Uri
-}
+const production = {
+  apiUrl: process.env.REACT_NATIVE_API_URI,
+  mongoDbUri: process.env.MONGODB_URI,
+};
+
+// Determine environment
+const environment = process.env.NODE_ENV || 'development';
+
+// Export configuration based on environment
+module.exports = environment === 'production' ? production : development;
