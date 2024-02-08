@@ -15,7 +15,7 @@ const placeRouter=require("./routes/Place")
 //   optionsSuccessStatus: 204, // Set the preflight response status to 204
 // };
 app.use(express.json({ limit: "10mb" }));
-// app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.urlencoded({ limit: "10mb", extended: "true" }));
 app.use(errorHandler);
 app.use("/api/v1/auth", authRouter);
