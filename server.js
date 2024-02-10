@@ -26,7 +26,7 @@ app.use("/api/v1/place",placeRouter)
 
 dotenv.config();
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to Database"))
   .catch((err) => console.log(err));
 const port = process.env.PORT || 3800;
